@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> DINESH KUMAR'S To-Do List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .task-list {
+            width: 300px;
+            margin: 0 auto;
+        }
+        .task {
+            background-color: #fff;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            padding: 10px;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+        .task:hover {
+            background-color: #f4f4f4;
+        }
+        .task label {
+            flex: 1;
+            display: block;
+        }
+        .task input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .delete-button {
+            background-color: #ff3333;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .delete-button:hover {
+            background-color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <h1>A DINESH KUMARS'S To-Do List</h1>
+    <div class="task-list">
+        <div class="task">
+            <label>
+                <input type="checkbox">
+               Attend a meeting 
+            </label>
+            <button class="delete-button">Delete</button>
+        </div>
+        <div class="task">
+            <label>
+                <input type="checkbox">
+                Complete the assignments
+            </label>
+            <button class="delete-button">Delete</button>
+        </div>
+        <div class="task">
+            <label>
+                <input type="checkbox">
+             Finish the design for new website
+            </label>
+            <button class="delete-button">Delete</button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to add functionality
+        const tasks = document.querySelectorAll('.task');
+        tasks.forEach(task => {
+            const checkbox = task.querySelector('input[type="checkbox"]');
+            const deleteButton = task.querySelector('.delete-button');
+
+            checkbox.addEventListener('change', () => {
+                task.style.textDecoration = checkbox.checked ? 'line-through' : 'none';
+            });
+
+            deleteButton.addEventListener('click', () => {
+                task.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
